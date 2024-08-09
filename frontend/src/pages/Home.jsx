@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -47,7 +48,17 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center text-center items-center">
-      <div className="my-12 text-2xl font-bold">Books List</div>
+      <div className="flex flex-col items-center justify-between">
+        <div className="my-12 text-2xl font-bold">Books List</div>
+        <div className="my-12 ">
+          <Link to={`/books/create`}>
+            <button className="flex justify-center items-center gap-2">
+              Add Book
+              <IoIosAddCircleOutline />
+            </button>
+          </Link>
+        </div>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="min-w-full bg-white border border-gray-200">
           <thead>

@@ -7,6 +7,8 @@ import cors from "cors";
 const app = express();
 //This is to allow parsing request as json
 app.use(express.json());
+//This allows the parsing of form data
+app.use(express.urlencoded({ extended: false }));
 
 //Middleware for handling CORS Policy
 //Option 1: Allow all Origins with default of cors(*)
